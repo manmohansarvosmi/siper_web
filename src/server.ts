@@ -3,8 +3,8 @@ import {
   createStartHandler,
   defaultStreamHandler,
 } from "@tanstack/react-start/server";
-import { createRouter } from "./router";
 
-export default createStartHandler({
-  createRouter,
-})(defaultStreamHandler);
+// In this version of TanStack Start, createStartHandler receives the render
+// handler directly. The router is wired up lazily via the
+// #tanstack-router-entry virtual alias -> src/router.tsx (getRouter export).
+export default createStartHandler(defaultStreamHandler);

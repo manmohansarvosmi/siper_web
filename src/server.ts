@@ -4,7 +4,8 @@ import {
   defaultStreamHandler,
 } from "@tanstack/react-start/server";
 
-// In this version of TanStack Start, createStartHandler receives the render
-// handler directly. The router is wired up lazily via the
-// #tanstack-router-entry virtual alias -> src/router.tsx (getRouter export).
-export default createStartHandler(defaultStreamHandler);
+// createStartHandler returns (request, requestOpts) => Response.
+// The TanStack Start dev-server plugin (and Cloudflare Workers) expect the
+// default export to be { fetch: Function }, not a bare function.
+const handler = createStartHandler(defaultStreamHandler);
+export default { fetch: handler };

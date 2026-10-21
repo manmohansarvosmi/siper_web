@@ -4,21 +4,19 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
-import globalCss from "../styles/global.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SIPER — School Information Portal" },
+      { title: "SIPER Lahar — School of Integrated Pharmacy Education & Research" },
       {
         name: "description",
         content:
-          "SIPER is a comprehensive school management and information portal.",
+          "SIPER Lahar is a premier pharmacy college offering B.Pharm, M.Pharm, D.Pharm and Pharm.D programs in Madhya Pradesh, India.",
       },
     ],
-    links: [{ rel: "stylesheet", href: globalCss }],
   }),
   component: RootComponent,
 });
